@@ -1,0 +1,12 @@
+require 'rubygems'
+require 'cucumber'
+require 'cucumber/rake/task'
+require 'openssl'
+
+Cucumber::Rake::Task.new(:features) do |t|
+  t.profile = 'default'
+end
+
+task :default => :features
+
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
